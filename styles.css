@@ -3,11 +3,11 @@ a,img{
 	padding: 0;
 }
 img{
-	width: 197px;
+	width: 200px;
 	display: block; 
 }
 .box{
-	width: 790px;
+	width: 800px;
 	font-size:0;
 }
 .box1{
@@ -18,7 +18,7 @@ img{
 }
 .bax1{
 	position:absolute;
-	bottom:-500px;
+	bottom:-150px;
 	transition:0.7s;
 }
 .box1:hover .bax1{
