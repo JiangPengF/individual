@@ -18,7 +18,7 @@ img{
 }
 .bax1{
 	position:absolute;
-	bottom:-150px;
+	bottom:-180px;
 	transition:0.7s;
 }
 .box1:hover .bax1{
