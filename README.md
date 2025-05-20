@@ -1,1 +1,1 @@
-https://jiangpengf.github.io/individual.github.io/
+https://jiangpengf.github.io/individual
