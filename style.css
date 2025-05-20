@@ -1,0 +1,29 @@
+a,img{
+		margin: 0;
+		padding: 0;
+	}
+	.box{
+		width: 790px;
+		font-size:0;
+	}
+	.box1{
+		display: inline-block;
+		position:relative;
+		overflow: hidden;
+		text-decoration:none;
+		
+	}
+	.bax1{
+		position:absolute;
+		bottom:-50px;
+		transition:0.7s;
+		
+	}
+	.box1:hover .bax1{
+		position: absolute;
+		bottom:0px;
+	}
+	img{
+		width: 197px;
+		display: block;
+	}
