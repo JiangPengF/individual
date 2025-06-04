@@ -1,21 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset-"UTF-8">
-  <meta name="viewport" content-"width=device-width, initial-scale=1.0">
-  <title>Jiang Pengfei's</title>
-  <link rel="stylesheet" href="/individual/styles.css">
-  </head>
-<body>
-  <!--这里将是网页内容的主要部分-->
-<div class="box">
-	<a href="#" class="box1">
-		<img src="/individual/img/Exhibition box design.jpg" alt="">
-		<div class="bax1">
-			<img src="/individual/img/Black.png" alt="">
-		</div>
-	</a>
-</div>
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链接页面</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#7C3AED',
+                        accent: '#0EA5E9',
+                        neutral: '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .link-card {
+                @apply relative overflow-hidden transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl;
+            }
+            .link-card::before {
+                @apply content-[''] absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 transition-opacity duration-300;
+            }
+            .link-card:hover::before {
+                @apply opacity-100;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-link text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold text-neutral">我的链接页面</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-neutral hover:text-primary transition-colors duration-200 font-medium">首页</a></li>
+                    <li><a href="#" class="text-neutral hover:text-primary transition-colors duration-200 font-medium">关于</a></li>
+                    <li><a href="#" class="text-neutral hover:text-primary transition-colors duration-200 font-medium">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-neutral mb-4">选择要访问的页面</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">点击下方卡片，浏览不同的内容页面</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- 链接1 -->
+            <a href="1.html" class="link-card rounded-xl bg-white shadow-lg overflow-hidden group">
+                <div class="h-48 bg-primary/10 flex items-center justify-center">
+                    <i class="fa fa-file-text-o text-6xl text-primary transition-transform duration-300 group-hover:scale-110"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-neutral mb-2">页面一</h3>
+                    <p class="text-gray-600 mb-4">这是第一个链接页面，包含丰富的文本内容和示例</p>
+                    <div class="flex items-center text-primary font-medium">
+                        访问页面 <i class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 链接2 -->
+            <a href="2.html" class="link-card rounded-xl bg-white shadow-lg overflow-hidden group">
+                <div class="h-48 bg-secondary/10 flex items-center justify-center">
+                    <i class="fa fa-image text-6xl text-secondary transition-transform duration-300 group-hover:scale-110"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-neutral mb-2">页面二</h3>
+                    <p class="text-gray-600 mb-4">这是第二个链接页面，展示精美的图片和视觉效果</p>
+                    <div class="flex items-center text-secondary font-medium">
+                        访问页面 <i class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 链接3 -->
+            <a href="3.html" class="link-card rounded-xl bg-white shadow-lg overflow-hidden group">
+                <div class="h-48 bg-accent/10 flex items-center justify-center">
+                    <i class="fa fa-video-camera text-6xl text-accent transition-transform duration-300 group-hover:scale-110"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-neutral mb-2">页面三</h3>
+                    <p class="text-gray-600 mb-4">这是第三个链接页面，提供视频播放和互动体验</p>
+                    <div class="flex items-center text-accent font-medium">
+                        访问页面 <i class="fa fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-neutral text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-link text-white text-2xl"></i>
+                        <h2 class="text-xl font-bold">我的链接页面</h2>
+                    </div>
+                    <p class="text-gray-400 max-w-md">一个简单而优雅的链接导航页面，帮助您快速访问不同内容</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i class="fa fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i class="fa fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 我的链接页面 | 设计与开发</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('py-2', 'shadow');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2', 'shadow');
+            }
+        });
+
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('opacity-100');
+            document.body.classList.remove('opacity-0');
+        });
+    </script>
 </body>
 </html>
+    
