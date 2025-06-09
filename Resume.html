@@ -18,7 +18,7 @@
                     江鹏飞 - 设计师作品集
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#home">首页</a></li>
                     <li><a href="#about">关于我</a></li>
                     <li><a href="#portfolio">作品集</a></li>
                     <li><a href="#contact">联系我</a></li>
@@ -454,7 +454,7 @@
         </div>
     </footer>
 
-    <script>
+<script>
         // Mobile Navigation Toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -476,25 +476,29 @@
                 
                 const filter = btn.getAttribute('data-filter');
                 
-               portfolioItems.forEach(item => {
-    const shouldShow = filter === 'all' || item.getAttribute('data-category') === filter;
-    
-    if (shouldShow) {
-        // 显示项目并添加淡入和上移的动画效果
-        item.style.display = 'block';
-        setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-        }, 50);
-    } else {
-        // 隐藏项目并添加淡出和下移的动画效果
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            item.style.display = 'none';
-        }, 400);
-    }
-});
+                portfolioItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else if (item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 400);
+                    }
+                });
+            });
+        });
         
         // Smooth Scrolling for Navigation Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -537,8 +541,6 @@
         
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
-
-
     </script>
 
     <!-- 返回顶部 -->
