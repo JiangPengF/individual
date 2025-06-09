@@ -277,8 +277,10 @@ section {
 }
 
 .about-text img {
+    display: block;
     max-width: 100%; 
     height: auto;
+    margin: 0 auto;
 }
 
 .skills {
@@ -416,6 +418,12 @@ section {
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-in-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 30px;
 }
 
