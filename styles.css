@@ -263,6 +263,9 @@ section {
 }
 
 .about-text {
+    background: white;
+    padding: 100px 50px ;
+    box-shadow: var(--shadow);
     flex: 1;
 }
 
