@@ -219,7 +219,7 @@ nav {
 
 /* Sections */
 section {
-    padding: 100px 0;
+    padding: 70px 0;
 }
 
 .section-title {
@@ -263,8 +263,10 @@ section {
 }
 
 .about-text {
+    max-width: 1000px;
     background: white;
-    padding: 100px 50px ;
+    padding: 50px 20px 80px;
+    margin: auto;
     box-shadow: var(--shadow);
     flex: 1;
 }
