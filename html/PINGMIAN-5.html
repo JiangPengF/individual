@@ -51,150 +51,37 @@
         </div>
     </section>
 
-   <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-                        
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">全部作品</button>
-                <button class="filter-btn" data-filter="graphic">平面设计</button>
-                <button class="filter-btn" data-filter="web">网页详情</button>
-                <button class="filter-btn" data-filter="3d">三维设计</button>
-            </div>
-            
-            <div class="portfolio-in-grid">
+ <iframe id="myIframe" src="Works_Navigation.html" width="100%" frameborder="0"></iframe>
 
-                <!-- 平面设计作品 -->
-
-                <div class="portfolio-item" data-category="graphic">
-	    <a href="PINGMIAN-1.html">
-                        <img src="../img/PINGMIAN-1.jpg" alt="工业电脑产品画册">
-                    <div class="portfolio-info">
-                        <h3>工业电脑产品画册</h3>
-                    </div>
-  	 </a>    
-                </div>
-         
-
-
-                <div class="portfolio-item" data-category="graphic">
-<a href="PINGMIAN-2.html">
-	    <img src="../img/PINGMIAN-2.jpg" alt="智能开关产品画册">
-                    <div class="portfolio-info">
-                        <h3>智能开关产品画册</h3>
-                        
-                    </div>
-</a>    
-                </div>
-            
-
-
-                <div class="portfolio-item" data-category="graphic">
-<a href="PINGMIAN-3.html">
-	    <img src="../img/PINGMIAN-3.jpg" alt="简灯包装盒">
-                    <div class="portfolio-info">
-                        <h3>简灯包装盒设计</h3>
-                        
-                    </div>
-</a>
-                </div>
-
-
-
-          
-                <div class="portfolio-item" data-category="graphic">
-<a href="PINGMIAN-4.html">      
-	    <img src="../img/PINGMIAN-4.jpg" alt="智能开关折页">
-                    <div class="portfolio-info">
-                        <h3>智能开关折页</h3>
-                        
-                    </div>
-</a>
-                </div>
-
-
-
-               
-                <div class="portfolio-item" data-category="graphic">
-<a href="PINGMIAN-5.html"> 
-	    <img src="../img/PINGMIAN-5.jpg" alt="展会易拉宝">
-                    <div class="portfolio-info">
-                        <h3>展会易拉宝设计</h3>
-                        
-                    </div>
-</a>
-                </div>
-
-
-
-                
-                <!-- 网页设计作品 -->
-
-                <div class="portfolio-item" data-category="web">
-<a href="WANGYE-1.html">
-                        <img src="../img/WANGYE-1.jpg" alt="商用装饰灯具页面">
-                    <div class="portfolio-info">
-                        <h3>商用装饰灯具页面</h3>
-                        
-                    </div>
-</a>
-                </div>
-
-
-          
-                <div class="portfolio-item" data-category="web">
-<a href="XIANGQING-1.html">      
-                        <img src="../img/XIANGQING-1.jpg" alt="汽车轮胎防爆垫详情页">
-                    <div class="portfolio-info">
-                        <h3>汽车轮胎防爆垫详情页</h3>
-                        
-                    </div>
-</a>
-                </div>
-
-                
-                
-                <!-- 三维设计作品 -->
-
-                <div class="portfolio-item" data-category="3d">
-<a href="SANWEI-1.html">    
-                        <img src="../img/SANWEI-1.jpg" alt="灯具产品渲染">
-                    <div class="portfolio-info">
-                        <h3>灯具产品渲染</h3>
-                        
-                    </div>
-</a>
-                </div>
-
-
-
-               
-                <div class="portfolio-item" data-category="3d">
-<a href="SANWEI-2.html">   
-                        <img src="../img/SANWEI-2.jpg" alt="灯具展架设计">
-                    <div class="portfolio-info">
-                        <h3>灯具展架设计</h3>                       
-                        
-                    </div>
-</a>
-                </div>
-
-
-
-             
-                <div class="portfolio-item" data-category="3d">
-<a href="SANWEI-3.html">     
-                        <img src="../img/SANWEI-3.jpg" alt="展厅三维效果展示">
-                    <div class="portfolio-info">
-                        <h3>展厅三维效果展示</h3>
-                        </div>
-</a>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
+<script>
+    // 等待iframe加载完成
+    document.getElementById('myIframe').addEventListener('load', function() {
+        const iframe = this;
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        
+        // 调整iframe高度
+        function resize() {
+            iframe.style.height = iframeDoc.body.scrollHeight + 'px';
+        }
+        
+        // 初始调整
+        resize();
+        
+        // 创建MutationObserver监听DOM变化
+        const observer = new MutationObserver(resize);
+        
+        // 配置观察选项
+        const config = {
+            childList: true,      // 监听子节点变化
+            subtree: true,        // 监听所有后代节点
+            attributes: true,     // 监听属性变化
+            characterData: true   // 监听文本内容变化
+        };
+        
+        // 开始观察
+        observer.observe(iframeDoc.body, config);
+    });
+</script>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -248,88 +135,9 @@
             navLinks.classList.toggle('active');
         });
         
-        // Portfolio Filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if (filter === 'all') {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else if (item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 400);
-                    }
-                });
-            });
-        });
-        
-        // Smooth Scrolling for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                navLinks.classList.remove('active');
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.job, .portfolio-item, .skill');
-            
-            elements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        // Initialize elements with opacity 0 for animation
-        document.querySelectorAll('.job, .portfolio-item, .skill').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    </script>
+
 
     <!-- 返回顶部 -->
-<script>
     /* 
     需求：当页面滚动大于300像素，就显示回到顶部按钮
     */
