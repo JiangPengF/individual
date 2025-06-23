@@ -42,6 +42,13 @@ a{
     padding: 0 20px;
 }
 
+.about{
+
+    background: white;
+    box-shadow: var(--shadow);
+
+}
+
 /* Header & Navigation */
 header {
     background: rgba(255, 255, 255, 0.95);
@@ -264,10 +271,10 @@ section {
 
 .about-text {
     max-width: 1000px;
-    background: white;
-    padding: 50px 20px 80px;
+
+    padding: 50px 10px 80px;
     margin: auto;
-    box-shadow: var(--shadow);
+
     flex: 1;
 }
 
