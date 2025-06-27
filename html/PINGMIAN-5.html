@@ -6,8 +6,9 @@
     <title>展会易拉宝 -- JIANG</title>
 <link rel="icon" href="../favicon-32.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon-32.ico"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="../js/iframeResizer.min.js"></script>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link href="../css/googleapis.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -51,36 +52,15 @@
         </div>
     </section>
 
- <iframe id="myIframe" src="Works_Navigation.html" width="100%" frameborder="0"></iframe>
+<iframe id="myIframe" src="Works_Navigation.html" width="100%" frameborder="0"></iframe>
 
 <script>
-    // 等待iframe加载完成
-    document.getElementById('myIframe').addEventListener('load', function() {
-        const iframe = this;
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        
-        // 调整iframe高度
-        function resize() {
-            iframe.style.height = iframeDoc.body.scrollHeight + 'px';
-        }
-        
-        // 初始调整
-        resize();
-        
-        // 创建MutationObserver监听DOM变化
-        const observer = new MutationObserver(resize);
-        
-        // 配置观察选项
-        const config = {
-            childList: true,      // 监听子节点变化
-            subtree: true,        // 监听所有后代节点
-            attributes: true,     // 监听属性变化
-            characterData: true   // 监听文本内容变化
-        };
-        
-        // 开始观察
-        observer.observe(iframeDoc.body, config);
-    });
+    // 初始化iframe自适应高度
+    iFrameResize({
+        log: false,             // 是否在控制台输出日志
+        checkOrigin: false,     // 是否检查同源（设为false允许跨域）
+        heightCalculationMethod: 'documentElementOffset' // 高度计算方法
+    }, '#myIframe');
 </script>
 
     <!-- Contact Section -->
