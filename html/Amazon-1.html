@@ -13,21 +13,15 @@
     <link href="../css/googleapis.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 
-    <script>
-        // 动态加载共享的head内容
-        fetch('https://jiangpengf.github.io/individual/google.html')
-            .then(response => {
-                if (!response.ok) throw new Error('加载失败');
-                return response.text();
-            })
-            .then(content => {
-                // 将外部文件内容插入到当前页面的<head>中
-                document.head.innerHTML += content;
-            })
-            .catch(error => {
-                console.error('加载google失败:', error);
-            });
-    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CR0N587D2F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CR0N587D2F');
+</script>
 
 </head>
 
@@ -88,6 +82,7 @@ margin: 0 auto;
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -105,6 +100,9 @@ margin: 0 auto;
 	<div class="carousel-item">
             <img src="../img\PINGMIAN\AMAZON1/Amazon-1_05.jpg" class="d-block w-100" alt="亚马逊主图设计1-5">
         </div>
+	<div class="carousel-item">
+            <img src="../img\PINGMIAN\AMAZON1/Amazon-1_06.jpg" class="d-block w-100" alt="亚马逊主图设计1-6">
+        </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -118,6 +116,10 @@ margin: 0 auto;
 <br>
                      <div>
 		<img src="../img\PINGMIAN\AMAZON1/Amazon-1.jpg" alt="亚马逊主图设计1">
+		<img src="../img\PINGMIAN\AMAZON1/Amazon-2.jpg" alt="亚马逊主图设计2">
+		<img src="../img\PINGMIAN\AMAZON1/Amazon-3.jpg" alt="亚马逊主图设计3">
+		<img src="../img\PINGMIAN\AMAZON1/Amazon-4.jpg" alt="亚马逊主图设计4">
+		<img src="../img\PINGMIAN\AMAZON1/Amazon-5.jpg" alt="亚马逊主图设计5">
 	     </div>
 
 
