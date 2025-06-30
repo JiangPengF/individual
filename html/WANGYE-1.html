@@ -11,21 +11,15 @@
     <link href="../css/googleapis.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 
-    <script>
-        // 动态加载共享的head内容
-        fetch('https://jiangpengf.github.io/individual/google.html')
-            .then(response => {
-                if (!response.ok) throw new Error('加载失败');
-                return response.text();
-            })
-            .then(content => {
-                // 将外部文件内容插入到当前页面的<head>中
-                document.head.innerHTML += content;
-            })
-            .catch(error => {
-                console.error('加载google失败:', error);
-            });
-    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7XN8TVN2XW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7XN8TVN2XW');
+</script>
 
 </head>
 <body>
